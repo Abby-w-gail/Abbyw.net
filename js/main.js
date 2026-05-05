@@ -6,6 +6,7 @@ function meow() {
 makeDraggable("mainWindow", "dragHandle");
 makeDraggable("linksWindow", "linksHandle");
 makeDraggable("extraWindow", "extraHandle");
+makeDraggable("loserWindow", "loserHandle");
 
 function makeDraggable(windowId, handleId) {
 	const win = document.getElementById(windowId);
