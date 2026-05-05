@@ -127,6 +127,12 @@ body {
 	top: 20px;
 }
 
+#extraWindow {
+position: absolute;
+	left: 500px;
+	top: 300px;
+	width: 260px;
+}
 .sidebar-content {
 	background: #c0c0c0;
 
