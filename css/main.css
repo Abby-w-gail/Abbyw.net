@@ -1,0 +1,274 @@
+@font-face {
+	font-family: "VCR";
+	src: url("../assets/fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
+}
+
+body {
+	margin: 0;
+	font-family: "VCR", monospace;	
+	font-size: 14px;
+
+	background: #008080; /* classic teal desktop */
+	color: black;
+
+	image-rendering: pixelated;
+}
+
+/* overall layout */
+.layout {
+	display: flex;
+	min-height: 100vh;
+}
+
+/* center area */
+.main {
+	flex: 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 32px;
+}
+
+/* main window */
+.box {
+	width: 520px;
+	max-width: 100%;
+
+	background: #c0c0c0;
+	border: 2px solid;
+
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	border-right-color: #404040;
+	border-bottom-color: #404040;
+
+	box-shadow: 2px 2px 0 #000000;
+	padding: 0;
+}
+
+/* fake title bar */
+.box {
+	width: 520px;
+	background: #c0c0c0;
+
+	border: 2px solid;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	border-right-color: #404040;
+	border-bottom-color: #404040;
+
+	box-shadow: 2px 2px 0 #000;
+
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+
+.titlebar {
+	height: 28px;
+	background: linear-gradient(to right, #000080, #1084d0);
+	color: white;
+
+	display: flex;
+	align-items: center;
+	padding: 0 8px;
+
+	font-weight: bold;
+	cursor: move;
+	user-select: none;
+}
+
+.window-content {
+	padding: 16px;
+}
+
+/* inside window content */
+.box h1,
+.box p,
+.box img,
+.box button {
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+.box h1 {
+	margin-top: 18px;
+	margin-bottom: 10px;
+	font-size: 26px;
+}
+
+.box p {
+	margin-top: 0;
+	margin-bottom: 12px;
+	line-height: 1.4;
+}
+
+/* right sidebar */
+
+
+
+.window,
+.sidebar-window {
+	background: #c0c0c0;
+
+	border: 2px solid;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	border-right-color: #404040;
+	border-bottom-color: #404040;
+
+	box-shadow: 2px 2px 0 #000000;
+	
+	
+	position: absolute;
+	left: 1200px;
+	top: 20px;
+}
+
+.sidebar-content {
+	background: #c0c0c0;
+
+	padding: 10px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+/* sidebar buttons */
+.icon {
+	width: 90px;
+	min-height: 26px;
+
+	background: #c0c0c0;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border: 2px solid;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	border-right-color: #404040;
+	border-bottom-color: #404040;
+
+	padding: 4px;
+	box-sizing: border-box;
+}
+
+/* press effect */
+.icon:hover,
+button:hover {
+	background: #d4d0c8;
+}
+
+.icon:active,
+button:active {
+	border-top-color: #404040;
+	border-left-color: #404040;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+
+/* regular buttons */
+button {
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	padding: 6px 12px;
+
+	background: #c0c0c0;
+	color: black;
+
+	border: 2px solid;
+	border-top-color: #ffffff;
+	border-left-color: #ffffff;
+	border-right-color: #404040;
+	border-bottom-color: #404040;
+
+	font-family: inherit;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+/* taskbar at bottom */
+.taskbar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	height: 32px;
+	background: #c0c0c0;
+
+	border-top: 2px solid #ffffff;
+
+	display: flex;
+	align-items: center;
+	padding: 0 4px;
+}
+
+/* totem */
+
+.totem {
+	width: 170px;
+	cursor: pointer;
+
+	transform-style: preserve-3d;
+	animation: spin 5s linear infinite;
+
+	filter: drop-shadow(0 0 15px rgba(180,120,255,0.35));
+	transition: transform 0.2s;
+}
+
+@keyframes spin {
+	0% {
+		transform: perspective(700px)
+					 rotateX(0deg)
+					 rotateY(0deg)
+					 rotateZ(0deg);
+	}
+
+	100% {
+		transform: perspective(700px)
+					 rotateX(360deg)
+					 rotateY(360deg)
+					 rotateZ(360deg);
+	}
+}
+
+/* trans trail */
+
+.trail {
+	position: fixed;
+	width: 18px;
+	height: 10px;
+	pointer-events: none;
+	z-index: 999999;
+
+	animation: fadeOut 0.8s linear forwards;
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+}
+
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
