@@ -1,0 +1,19 @@
+.theme-switch {
+	position: fixed;
+	right: 14px;
+	bottom: 14px;
+	z-index: 100000;
+	font-family: "VCR", monospace;
+	font-size: 14px;
+	background: #050505;
+	color: #ff00aa;
+	border: 1px solid #ffffff;
+	outline: 1px solid #222;
+	padding: 6px 10px;
+	text-decoration: none;
+}
+
+.theme-switch:hover {
+	background: #ff00aa;
+	color: #000000;
+}
