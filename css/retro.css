@@ -1,9 +1,4 @@
 @font-face {
-	font-family: "VCR";
-	src: url("../assets/fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
-}
-
-@font-face {
 	font-family: "Comic Neue";
 	src: url("../assets/fonts/ComicNeue-Bold.woff2") format("woff2");
 	font-weight: 700;
@@ -269,100 +264,6 @@ canvas {
 	inset: 0;
 	z-index: 9999;
 	pointer-events: none;
-}
-
-.popup {
-	position: fixed;
-	width: 720px;
-	max-width: calc(100vw - 32px);
-	height: 70vh;
-	display: flex;
-	flex-direction: column;
-	background: #000000;
-	color: #ffffff;
-	border: 2px solid #ffffff;
-	outline: 1px solid #555;
-	box-shadow:
-		0 0 0 1px #000,
-		0 0 14px rgba(255,0,150,0.12);
-	font-family: "VCR", monospace;
-	font-size: 14px;
-}
-
-.popup-titlebar {
-	height: 28px;
-	flex-shrink: 0;
-	background: linear-gradient(to right, #111111, #2a2a2a);
-	color: #ffffff;
-	border-bottom: 1px solid #ffffff;
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	padding: 0 4px 0 10px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	cursor: move;
-	user-select: none;
-	text-transform: uppercase;
-	touch-action: none;
-}
-
-.popup-title {
-	flex: 1;
-	min-width: 0;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-
-.popup-title::before {
-	content: ">>";
-	color: #ff00a8;
-	margin-right: 8px;
-}
-
-.popup-title::after {
-	content: "<<";
-	color: #ff00a8;
-	margin-left: 8px;
-}
-
-.popup-close {
-	width: 22px;
-	height: 22px;
-	padding: 0;
-	font-family: inherit;
-	font-size: 14px;
-	line-height: 1;
-	background: #050505;
-	color: #ff00aa;
-	border: 1px solid #ffffff;
-	cursor: pointer;
-}
-
-.popup-close:hover {
-	background: #ff00aa;
-	color: #000000;
-}
-
-.popup-frame {
-	flex: 1;
-	width: 100%;
-	border: 0;
-	background: #ffffff;
-}
-
-.popup.dragging .popup-frame {
-	pointer-events: none;
-}
-
-.popup-note {
-	flex-shrink: 0;
-	padding: 4px 10px;
-	font-size: 11px;
-	color: #ff00aa;
-	border-top: 1px solid #333;
-	background: #000000;
 }
 
 @media (max-width: 760px) {
