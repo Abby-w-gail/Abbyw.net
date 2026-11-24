@@ -7,6 +7,17 @@ makeDraggable("mainWindow", "dragHandle");
 makeDraggable("linksWindow", "linksHandle");
 makeDraggable("extraWindow", "extraHandle");
 makeDraggable("loserWindow", "loserHandle");
+makeDraggable("discordWindow", "discordHandle");
+
+/* --- clicking a window brings it to the front --- */
+let topZ = 10;
+
+document.querySelectorAll(".box, .window").forEach((win) => {
+	win.addEventListener("mousedown", () => {
+		topZ++;
+		win.style.zIndex = topZ;
+	});
+});
 
 function makeDraggable(windowId, handleId) {
 	const win = document.getElementById(windowId);
@@ -69,8 +80,6 @@ function lerp(a, b, t) {
 	return a + (b - a) * t;
 }
 
-let time = 0;
-
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -87,8 +96,6 @@ function draw() {
 		x = p.x;
 		y = p.y;
 	}
-
-	time += 0.02;
 
 	// draw color strokes
 	for (let c = 0; c < colors.length; c++) {
